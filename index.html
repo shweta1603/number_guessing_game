@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script>
+    // Math.random()- gives number between 0(inclusive) to 1(exclusive) (ex- 0.1,0.11321,0.2, 0.99 etc)
+    // to make it between 0 to 99 , multiply by 100 and to remove decimal Math.trunc. Now for 1-100, add 1.
+  
+    const actualNumber = Math.floor(Math.random() * 100) + 1
+    console.log(actualNumber)
+    let numOfGuesses= 10
+    
+    const checkNumber = ()=>{
+        var numGuessed = parseInt( document.getElementById('input-num').value);
+        console.log(numGuessed)
+        if(numGuessed < actualNumber){
+            console.log("Actual number is greater!")
+            document.getElementById('lesser').style.display= 'none'
+            document.getElementById('greater').style.display= 'block'
+        }   
+        else if(numGuessed > actualNumber){
+        console.log("Actual number is lesser!")
+        document.getElementById('greater').style.display= 'none'
+        document.getElementById('lesser').style.display= 'block'
+        }
+        else{
+        document.getElementById('greater').style.display= 'none'
+        document.getElementById('lesser').style.display= 'none'
+        document.getElementById('equal').style.display= 'block'
+        }
+        numOfGuesses--;
+        if(numOfGuesses>0){
+        document.getElementById('noOfGuesses').innerText = ("Number of Guesses remaining: " + numOfGuesses)
+        }
+        else{
+        document.getElementById('noOfGuesses').innerText= "Number of guesses finished!"
+    
+        } 
+    }
+
+   // let inputNumber = Number(prompt('Please enter a number'))
+   // checkNumber(inputNumber)
+
+
+</script>
+<body>
+  <div id="img"></div>
+   <div id="container">
+    <h1>Number Guessing Game</h1>
+    <div><p>Try and guess a random number between 1 and 100</p>
+         <p>You have 10 attempts to guess the number</p>
+    </div>
+     <p>Guess a number!</p>
+     <input type="number" value="" id="input-num">
+     <button onclick="checkNumber()">Submit guess</button>
+     
+   <div class="not-equal" id="greater" style="display:none;"> Actual number is greater! </div>
+   <div class="not-equal" id="lesser" style="display:none"> Actual number is lesser! </div>
+   <div id="equal" style="display:none;"> Great! You were able to guess the number </div>
+   <div id="noOfGuesses"> </div>
+   </div>
+   
+</body>
+</html>

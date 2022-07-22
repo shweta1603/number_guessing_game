@@ -1,0 +1,27 @@
+#img{
+    background-image: url("https://th.bing.com/th/id/R.40d7a91a0517bdaf2c1ce652d3e8e561?rik=iK4VqpqqrWfYyQ&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2017%2f05%2f29%2f52979-closeup-d20-gold-Dungeons_and_Dragons-dice-numbers.jpg&ehk=EcyVlVvW5A2gQXTR0uWEZ9A37CScjv4QaiuaiqEOIMc%3d&risl=&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    margin: auto;
+    width: 95rem;
+    height: 45em;
+    position: relative;
+}
+#container{  
+    background-color: bisque;
+    color: black;
+    padding: 35px;
+    opacity: 0.8;
+    position: absolute;
+    left: 507px;
+    top: 24%;
+    font-size: 25px;
+    margin: 0;
+    padding: 18px;
+}
+.not-equal{
+    background-color: green;
+}
+#equal{
+    background-color: brown;
+}
